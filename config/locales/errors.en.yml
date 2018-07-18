@@ -1,0 +1,4 @@
+en:
+  errors:
+    requests:
+      bad_request: 'Bad Request'

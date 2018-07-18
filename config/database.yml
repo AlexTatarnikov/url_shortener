@@ -1,0 +1,20 @@
+development: &development
+  adapter: postgresql
+  encoding: unicode
+  database: soul_artist_development
+  host: <%= ENV.fetch("DB_HOST") { 'localhost' } %>
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  username: <%= ENV.fetch("DB_USER") { 'postgres' } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { 'postgres' } %>
+
+test:
+  <<: *development
+  database: url_shortener_test
+
+staging:
+  <<: *development
+  database: url_shortener_staging
+
+production:
+  <<: *development
+  database: url_shortener_production
