@@ -1,0 +1,52 @@
+{
+  "resource": "Link",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/links",
+  "description": "Create",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "link",
+      "required": true,
+      "name": "url",
+      "description": "URL"
+    },
+    {
+      "scope": "link",
+      "required": true,
+      "name": "code",
+      "description": "Code"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/links",
+      "request_body": "{\"link\":{\"url\":\"http://hegmann.co/teresita\",\"code\":\"tbvmn7\"}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"success\": true\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"c955e57777ec0d73639dca6748560d00\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "8c0b42d1-5d52-4bd5-ac02-6457250782e5",
+        "X-Runtime": "0.013142",
+        "Content-Length": "16"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

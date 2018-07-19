@@ -1,0 +1,24 @@
+{
+  "resources": [
+    {
+      "name": "Link",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Create",
+          "link": "link/create.json",
+          "groups": "all",
+          "route": "api/v1/links",
+          "method": "post"
+        },
+        {
+          "description": "Create - error",
+          "link": "link/create_-_error.json",
+          "groups": "all",
+          "route": "api/v1/links",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}
