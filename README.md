@@ -1,5 +1,6 @@
 # URL Shortener
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/9624204ff899ce978d21/maintainability)](https://codeclimate.com/github/AlexTatarnikov/url_shortener/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9624204ff899ce978d21/test_coverage)](https://codeclimate.com/github/AlexTatarnikov/url_shortener/test_coverage)
 #### Requirements:
 
 * Ruby/Rails versions
@@ -27,5 +28,5 @@
 
 * You can check API documentation on your local machine http://localhost:3000/api/docs
 
-*Version 18 July 2018*
+*Version 19 July 2018*
 
