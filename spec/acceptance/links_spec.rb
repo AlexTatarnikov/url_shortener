@@ -16,6 +16,10 @@ resource 'Link' do
 
     example_request 'Create' do
       expect(status).to eq(201)
+      expect(parsed_body).to match({
+                                     url: url,
+                                     code: code
+                                   })
     end
 
     example_request 'Create - error', link: { url: nil } do

@@ -1,11 +1,11 @@
-class Api::V1::LinksController < Api::V1::BaseController
+class Api::V1::LinksController < ApplicationController
   def create
     @link = Link.create(link_params)
 
     if @link.persisted?
-      respond_with_no_content(status: 201)
+      render json: @link, status: 201
     else
-      respond_with_no_content(status: 422, json: {success: false})
+      render json: {success: false}, status: 422
     end
   end
 
