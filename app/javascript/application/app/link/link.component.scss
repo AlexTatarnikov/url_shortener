@@ -20,6 +20,12 @@
     border-right: 0;
     font-size: 14px;
     color: #F16534;
+
+    &.is-invalid {
+      border: 1px solid red;
+      border-right: 0;
+      color: red;
+    }
   }
 
   .btn-shorten, .btn-copy {
