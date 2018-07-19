@@ -5,9 +5,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'spa#index'
+  get '/:code', to: 'redirects#show'
 
-  get '*path', to: 'spa#index', constraints: ->(request) do
-    !request.xhr? && request.format.html?
-  end
+  root to: 'spa#index'
 end

@@ -11,6 +11,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Geo
 gem 'geokit-rails'
+gem 'countries'
 
 # API Staff
 gem 'responders'
@@ -38,6 +39,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_flusher'
   gem 'nyan-cat-formatter'
+  gem 'webmock'
   gem 'simplecov', require: false
 end
 

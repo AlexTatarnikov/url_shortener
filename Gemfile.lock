@@ -56,6 +56,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     bootsnap (1.3.1)
       msgpack (~> 1.0)
@@ -64,6 +66,13 @@ GEM
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.0.5)
+    countries (2.1.4)
+      i18n_data (~> 0.8.0)
+      money (~> 6.9)
+      sixarm_ruby_unaccent (~> 1.1)
+      unicode_utils (~> 1.4)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.4)
     database_flusher (0.3.4)
     diff-lcs (1.3)
@@ -83,8 +92,10 @@ GEM
       rails (>= 3.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashdiff (0.3.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    i18n_data (0.8.0)
     json (2.1.0)
     jsonapi-renderer (0.2.0)
     kramdown (1.17.0)
@@ -104,6 +115,8 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    money (6.12.0)
+      i18n (>= 0.6.4, < 1.1)
     msgpack (1.2.4)
     mustache (1.0.5)
     nio4r (2.3.1)
@@ -112,6 +125,7 @@ GEM
     nyan-cat-formatter (0.12.0)
       rspec (>= 2.99, >= 2.14.2, < 4)
     pg (1.0.0)
+    public_suffix (3.0.2)
     puma (3.12.0)
     rack (2.0.5)
     rack-proxy (0.6.4)
@@ -176,6 +190,7 @@ GEM
       mustache (~> 1.0, >= 0.99.4)
       rspec (~> 3.0)
     ruby_dep (1.5.0)
+    safe_yaml (1.0.4)
     shoulda-matchers (3.1.2)
       activesupport (>= 4.0.0)
     simplecov (0.16.1)
@@ -183,6 +198,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    sixarm_ruby_unaccent (1.2.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -195,6 +211,11 @@ GEM
     timecop (0.9.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    unicode_utils (1.4.0)
+    webmock (3.4.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     webpacker (3.5.5)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -211,6 +232,7 @@ DEPENDENCIES
   apitome!
   bootsnap (>= 1.1.0)
   byebug
+  countries
   database_flusher
   factory_bot_rails
   faker
@@ -228,6 +250,7 @@ DEPENDENCIES
   simplecov
   timecop
   tzinfo-data
+  webmock
   webpacker
 
 RUBY VERSION
