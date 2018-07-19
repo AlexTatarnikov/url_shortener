@@ -1,0 +1,19 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=6484e564d23abc91e718a59ec86b724024c03cd912b1f8b384816bc24a26f947
+language: ruby
+rvm:
+  - 2.5.1
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database url_shortener_test;' -U postgres
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle exec rake db:migrate
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
