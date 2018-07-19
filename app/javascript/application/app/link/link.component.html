@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div *ngIf="link.created; then thenBlock else elseBlock" ></div>
+  <ng-template #thenBlock>
+    <div class="shortened-url">
+      {{shortenedUrl()}}
+    </div>
+    <img class="reset" (click)="reset()" src="~images/cross.svg" />
+    <button ngxClipboard [cbContent]=shortenedUrl() class="btn-copy">Copy</button>
+  </ng-template>
+  <ng-template #elseBlock>
+    <form name="form" (ngSubmit)="f.form.valid && shorten()" #f="ngForm" novalidate>
+      <input [(ngModel)]="link.url" name="url" #url="ngModel" placeholder="Paste URL here" [ngClass]="{ 'is-invalid': f.submitted && url.invalid }" required>
+      <button class="btn-shorten">Shorten</button>
+    </form>
+  </ng-template>
+</div>
+
+<div class="wrapper">
+  <div *ngIf="link.created" class="input-hint">
+    <a href="//{{link.url}}" target="_blank">{{link.url}}</a> shortening
+  </div>
+</div>
+

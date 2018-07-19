@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import templateString from './app.component.html'
+import styleString from './app.component.scss'
 
 @Component({
   selector: 'url-shortener',
-  template: `<h1>Hello {{name}}</h1>`
+  template: templateString,
+  styles: [styleString]
 })
-export class AppComponent {
-  name = 'Angular!';
-}
+export class AppComponent {}
