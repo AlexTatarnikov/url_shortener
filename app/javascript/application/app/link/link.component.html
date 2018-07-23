@@ -1,23 +1,23 @@
 <div class="wrapper">
   <div *ngIf="link.created; then thenBlock else elseBlock" ></div>
   <ng-template #thenBlock>
-    <div class="shortened-url">
+    <div class="url-block">
       {{shortenedUrl()}}
     </div>
-    <img class="reset" (click)="reset()" src="~images/cross.svg" />
-    <button ngxClipboard [cbContent]=shortenedUrl() class="btn-copy">Copy</button>
+    <img class="reset-link" (click)="reset()" src="~images/cross.svg" />
+    <button ngxClipboard [cbContent]=shortenedUrl() class="button">Copy</button>
   </ng-template>
   <ng-template #elseBlock>
-    <form name="form" (ngSubmit)="f.form.valid && shorten()" #f="ngForm" novalidate>
-      <input [(ngModel)]="link.url" name="url" #url="ngModel" placeholder="Paste URL here" [ngClass]="{ 'is-invalid': f.submitted && url.invalid }" required>
-      <button class="btn-shorten">Shorten</button>
+    <form name="form" (ngSubmit)="f.form.valid && shorten()" #f="ngForm" class="form-shorten" novalidate>
+      <input [(ngModel)]="link.url" name="url" #url="ngModel" class="url-block" placeholder="Paste URL here" [ngClass]="{ 'url-block--is-invalid': f.submitted && url.invalid }" required>
+      <button class="button">Shorten</button>
     </form>
   </ng-template>
 </div>
 
 <div class="wrapper">
-  <div *ngIf="link.created" class="input-hint">
-    <a href="//{{link.url}}" target="_blank">{{link.url}}</a> shortening
+  <div *ngIf="link.created" class="info-hint">
+    <a href="//{{link.url}}" target="_blank" class="info-hint__original-link">{{link.url}}</a> shortening
   </div>
 </div>
 
